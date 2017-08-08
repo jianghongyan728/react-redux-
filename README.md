@@ -132,5 +132,6 @@ export default CalcContainer;
 ##### 以上就是所有的代码，接下来我们看看效果，当点击plus的时候+1，点击minus就-1，点击if odd plus奇数的时候+1，点击anync plus异步1秒后+1
 
 
+![看这里](https://github.com/jianghongyan728/react-redux-/blob/master/GIF.gif);
 
 
