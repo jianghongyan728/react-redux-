@@ -5,13 +5,13 @@
 npm install -g create-react-app//安装全局
 create-react-app react-redux//创建文件
 
-cd react-redux//跳转文件
+cd react-redux//跳转react-redux文件下
 npm start//运行
 ```
 ##### 我们把文件创建完之后，还要安装react-redux
 
 ```
-npm install react-redux --save
+npm install react-redux --save//安装react-redux
 如果安装的慢或者安装出错误，就可以用cnpm
 npm install cnpm -g//安装全局的cnpm
 cnpm install react-redux --save//安装完cnpm，在安装react-redux
@@ -42,7 +42,7 @@ export default App;
 
 ```
 
-###### Calc.js
+###### component文件里的Calc.js
 
 ```javascript
 import React from 'react';
@@ -85,7 +85,7 @@ ReactDOM.render(
 registerServiceWorker();
 
 ```
-###### CalcContainer.js
+###### container文件里的CalcContainer.js
 
 ```javascript
 import React from 'react';
@@ -128,6 +128,37 @@ const mapDispatchToProps=((dispatch,ownProps)=>{
 let CalcContainer=connect(mapStoreToProps,mapDispatchToProps)(Calc);
 
 export default CalcContainer;
+```
+###### reducer里面的index.js 
+```javascript
+function reducer(state=0,action){
+            switch(action.type){
+                case "plus":{
+                    state=state+1;
+                    break;
+                }
+                case "jian":{
+                    state=state-1;
+                    break;
+                }
+                case "odd_plus":{
+                    if(state%2===1){
+                        state+=1;
+                    }
+                    break;
+                }
+                case "async_plus":{
+                   state=state+1;
+                    break;
+                }
+                default:{
+                  break;
+                }
+            }
+            return state;
+        }
+
+export default reducer;
 ```
 ##### 以上就是所有的代码，接下来我们看看效果，当点击plus的时候+1，点击minus就-1，点击if odd plus奇数的时候+1，点击anync plus异步1秒后+1
 
